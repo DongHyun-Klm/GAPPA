@@ -10,7 +10,7 @@ const FCM = () => {
   const [isPushEnabled, setPushEnabled] = useState(false);
 
   useEffect(() => {
-    const isFCM = localStorage.getItem("fcmToken");  
+    const isFCM = localStorage.getItem("fcmToken");
     if( isFCM !== null ){
       setPushEnabled(true);
     }
@@ -19,7 +19,7 @@ const FCM = () => {
   const togglePushNotification = () => {
     if(isPushEnabled === false){
       setPushEnabled(true);
-      hideOnPush(); 
+      hideOnPush();
     } else if(isPushEnabled === true){
       setPushEnabled(false);
       hideOffPush();
@@ -28,13 +28,13 @@ const FCM = () => {
 
   // firebase 설정
   const firebaseConfig = {
-    apiKey: "AIzaSyAsVDuXDmuLEEmZGEzLXzC_JFOE9Dkv2yk",
-    authDomain: "gappa-5755f.firebaseapp.com",
-    projectId: "gappa-5755f",
-    storageBucket: "gappa-5755f.appspot.com",
-    messagingSenderId: "749380203321",
-    appId: "1:749380203321:web:3aba3212b3da7ac363aee8",
-    measurementId: "G-87Q4T0J8PG"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
   };
 
   const app = initializeApp(firebaseConfig);
@@ -62,7 +62,7 @@ const FCM = () => {
   async function getFirebaseToken() {
     try {
       const token = await getToken(messaging, {
-        vapidKey: "BEGTfGO_ZzNesa6dGfyqdv6bLEy96rCBOcsZPV36Glm4MdYmWqVBhDjxIywtut1qVKq7hD_973Q3_fseOCFhuKU",
+        vapidKey: "",
       });
 
       if (token) {
@@ -94,7 +94,7 @@ const FCM = () => {
     .catch((res)=>{
       setPushEnabled(false);
     })
-  }  
+  }
 
   const hideOffPush = () => {
     customAxios.delete("/fcm")
@@ -110,7 +110,7 @@ const FCM = () => {
       <div className={style.pushSwitch + (isPushEnabled ? ' ' + style.pushEnabled : '')} onClick={togglePushNotification} >
         <div className={style.switchButton}/>
       </div>
-      
+
     </div>
   );
 };

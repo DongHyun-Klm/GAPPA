@@ -1,16 +1,16 @@
 spring:
   # 로그파일 설정
   application:
-    name: svc1-accounts
+    name:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://j9B206.p.ssafy.io:2231/gappa?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: gappa
-    password: bqefip4o407wwgdn6-c4sc-zzhpf11-vvla
+    driver-class-name:
+    url:
+    username:
+    password:
   redis:
-    host: j9b206.p.ssafy.io
-    port: 9707
-    password: gappa
+    host:
+    port:
+    password:
 
   batch:
     jdbc:
@@ -31,18 +31,16 @@ spring:
         default_batch_fetch_size: 1000
 
 # sms
-accessKey: fM7dsWwkyM4SRx3dihNM
-secretKey: lklJtbeKB4fR7WcNrbZb7gL4LpqFp27b2msw5RzF
-serviceId: ncp:sms:kr:312413481836:gappa
+accessKey:
+secretKey:
+serviceId:
 
 # system number
-systemPhoneNumber: 01073877808
-
+systemPhoneNumber:
 # jwt
 jwt:
   secret:
-    key: 89525749bcff2dc9c717e6014d03d342fe93d46de7fb6b0915c930ed3e675f663adb3932cd145044aba992c3fa3d501e39df232a077319b5f235be80d9647120
-
+    key:
 # firebase
 fcm:
-  certification: certification.json
+  certification:
